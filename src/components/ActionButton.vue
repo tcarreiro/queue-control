@@ -5,17 +5,19 @@ import { type ButtonInfo, type ButtonStyle } from 'src/models/button.model';
 export type ActionButtonProps = {
   btnInfo: ButtonInfo;
   btnStyle?:ButtonStyle;
+  disabled?:boolean;
 }
 
 const emit = defineEmits(["onClick"]);
 
 const props = withDefaults(defineProps<ActionButtonProps>(), {
   btnStyle: () => ({
-    btnClass:'',
-    height:0,
-    minWidth:0,
-    color:'white',
+    btnClass:'text-h7',
+    height:30,
+    minWidth:200,
+    color:'primary',
   }),
+  disabled:false,
 });
 
 </script>
@@ -30,6 +32,7 @@ const props = withDefaults(defineProps<ActionButtonProps>(), {
     :color="props.btnStyle?.color"
     @click="emit('onClick')"
     push
+    :disabled="props.disabled"
   >
     <div class="q-ma-0 row items-center no-wrap">
       <q-icon

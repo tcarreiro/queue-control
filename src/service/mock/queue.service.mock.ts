@@ -1,56 +1,74 @@
-import { ServiceType, type ServiceUser } from "src/models/serviceUser.model";
+import { ServiceType, TicketStatus, type Ticket } from "src/models/serviceUser.model";
 
-export const getUsersQueueMock = ():Promise<Array<ServiceUser>> => {
+export const getUsersQueueMock = ():Promise<Array<Ticket>> => {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve([
         {
-          name:'User 1',
-          dob:'',
-          cpf:56164371265,
+          user:{
+            name:'User 1',
+            dob:'',
+            cpf:56164371265,
+          },
           ticketNumber:'CO0001',
           ticketCreatedAt:'',
-          service: ServiceType.CONSULTATION
+          serviceType: ServiceType.CONSULTATION,
+          ticketStatus: TicketStatus.ON_QUEUE
         },
         {
-          name:'User 2',
-          dob:'',
-          cpf:51472313512,
+          user:{
+            name:'User 2',
+            dob:'',
+            cpf:56164371265,
+          },
           ticketNumber:'VA0001',
           ticketCreatedAt:'',
-          service: ServiceType.VACCINATION
+          serviceType: ServiceType.VACCINATION,
+          ticketStatus: TicketStatus.ON_QUEUE
         },
         {
-          name:'User 3',
-          dob:'',
-          cpf:13124315212,
+          user:{
+            name:'User 3',
+            dob:'',
+            cpf:56164371265,
+          },
           ticketNumber:'VA0002',
           ticketCreatedAt:'',
-          service: ServiceType.VACCINATION
+          serviceType: ServiceType.VACCINATION,
+          ticketStatus: TicketStatus.ON_QUEUE
         },
         {
-          name:'User 4',
-          dob:'',
-          cpf:56164371265,
+          user:{
+            name:'User 4',
+            dob:'',
+            cpf:56164371265,
+          },
           ticketNumber:'CO0002',
           ticketCreatedAt:'',
-          service: ServiceType.CONSULTATION
+          serviceType: ServiceType.CONSULTATION,
+          ticketStatus: TicketStatus.ON_QUEUE
         },
         {
-          name:'User 5',
-          dob:'',
-          cpf:56164371265,
+          user:{
+            name:'User 5',
+            dob:'',
+            cpf:56164371265,
+          },
           ticketNumber:'CO0003',
           ticketCreatedAt:'',
-          service: ServiceType.CONSULTATION
+          serviceType: ServiceType.CONSULTATION,
+          ticketStatus: TicketStatus.ON_QUEUE
         },
         {
-          name:'User 6',
-          dob:'',
-          cpf:13124315212,
+          user:{
+            name:'User 6',
+            dob:'',
+            cpf:56164371265,
+          },
           ticketNumber:'VA0003',
           ticketCreatedAt:'',
-          service: ServiceType.VACCINATION
+          serviceType: ServiceType.VACCINATION,
+          ticketStatus: TicketStatus.ON_QUEUE
         },
       ]);
     }, 1000);

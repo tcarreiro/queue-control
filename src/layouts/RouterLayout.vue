@@ -9,9 +9,10 @@ const initialized:Ref<boolean> = ref(true);
 const newAppState:AppState = {
   componentKey:0,
   locale:'br',
-  page:Routes.TICKET_SERVICE_REQUEST,
+  page:Routes.MAIN_PAGE,
   pageParams:'',
-  token:''
+  token:'',
+  selectedTicket:null
 }
 
 const appStore = useApp();
@@ -22,11 +23,7 @@ const renderedElement = computed(() => appStore.page ? getRoute(appStore.page)?.
 </script>
 
 <template>
-  <q-layout view="lhh Lpr lff">
-    <q-page-container>
-      <div id="content-modules">
-        <component v-if="initialized" :is="renderedElement" :key="appStore.componentKey"></component>
-      </div>
-    </q-page-container>
-  </q-layout>
+  <div id="content-modules">
+    <component v-if="initialized" :is="renderedElement" :key="appStore.componentKey"></component>
+  </div>
 </template>

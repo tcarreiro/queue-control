@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-# queue-control
-=======
 # Queue Control (queue-control)
 
 Queue control made easy

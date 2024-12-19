@@ -1,1 +1,12 @@
 // app global css in SCSS form
+
+* {
+  --primary-bg: #FFFFFF;
+}
+
+.text-primary-bg {
+  color: var(--primary-bg) !important;
+}
+.bg-primary-bg {
+  background: var(--primary-bg)!important;
+}

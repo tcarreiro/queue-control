@@ -1,4 +1,4 @@
-import { type ServiceUser } from "src/models/serviceUser.model";
+import { type Ticket } from "src/models/serviceUser.model";
 import { getUsersQueueMock } from "./mock/queue.service.mock";
 import { isAllMocked } from "./services.config";
 
@@ -8,6 +8,6 @@ export const isMocked = ():boolean => {
   return isAllMocked() || enableLocalMock;
 }
 
-export const getUsersQueue = ():Promise<Array<ServiceUser>> => {
+export const getUsersQueue = ():Promise<Array<Ticket>> => {
   return isMocked() ? getUsersQueueMock() : getUsersQueueMock();
 }

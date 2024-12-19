@@ -1,5 +1,6 @@
 import { defineStore, acceptHMRUpdate } from 'pinia';
 import { type Routes } from 'src/models/page.model';
+import { type Ticket } from 'src/models/serviceUser.model';
 import { scrollToTop } from 'src/utils/utils';
 
 export type AppState = {
@@ -8,6 +9,7 @@ export type AppState = {
   pageParams:string|null;
   componentKey:number;
   locale:string;
+  selectedTicket: Ticket|null;
 }
 
 export const useApp = defineStore('appState', {
@@ -16,7 +18,8 @@ export const useApp = defineStore('appState', {
     componentKey:-1,
     locale:"br",
     page:null,
-    pageParams:null
+    pageParams:null,
+    selectedTicket:null,
   }),
   getters: {
   },
@@ -31,6 +34,15 @@ export const useApp = defineStore('appState', {
     },
     setToken(token:string) {
       if (token) this.$state.token = token;
+    },
+    clearSelectedTicket() {
+      this.$state.selectedTicket = null;
+    },
+    setSelectedTicket(newTicket:Ticket) {
+      this.$state.selectedTicket = newTicket;
+    },
+    getSelectedTicket():Ticket|null {
+      return this.$state.selectedTicket;
     }
   },
 });
